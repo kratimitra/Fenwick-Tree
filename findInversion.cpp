@@ -36,6 +36,12 @@ int main(){
     int n;
     cin >> n;
     ll a[n+10];
+ 
+ 
+ // Now if the range of the array elelments is very large(a[i] > 10^6)
+ //we cannot make array of this big size
+ // this calls for the need of technique called compression
+ 
     map<ll,int> mp;
     for(int i = 1;i <= n; ++i){
         cin >> a[i];
@@ -52,8 +58,6 @@ int main(){
     }
 
     // Finding Inversion count
-
-
     int inv_count = 0;
     for(int i = 1; i<= n; ++i){
         inv_count += (sum(N-5) - sum(a[i]));
